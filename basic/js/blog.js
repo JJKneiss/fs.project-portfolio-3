@@ -9,8 +9,9 @@ xhr.onload = function() {
             blog += '<article>';
             blog += '<p class = "thumbnail"> <img src = "' + data.blog[i].image + '" alt="' + data.blog[i].exercise + '" width="50" height="60"></p>';
             blog += '<h3>' + data.blog[i].exercise +'</h3>';
-            blog += '<h4 class="exercise">'+ data.blog[i].description + '</h4>';
-            blog += '<p><meter min="0" max="5" value"' + data.blog[i].rating + '">'  + data.blog[i].rating + 'out of 5</meter> <a href="/rate">Rate It</a></p>';
+            //blog += '<h4 class="blog">'+ data.blog[i].link + '</h4>';
+            blog += '<br><p><a href="'+data.blog[i].link+'">Source</a></p>';
+            blog += '<p>' + data.blog[i].description + '</p>';
             blog += '<dl>';
                 blog += '<dt> Estimated Time</dt>';
                 blog += '<dd>' + data.blog[i].time + ' minutes</dd>';
