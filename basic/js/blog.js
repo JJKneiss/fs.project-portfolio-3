@@ -7,16 +7,19 @@ xhr.onload = function() {
         var blog = '';
         for (var i = 0; i < data.blog.length; i++) {
             blog += '<article>';
-            blog += '<p class = "thumbnail"><img src = ' + data.blog[i].image + ' "alt= ' + data.blog[i].exercise+ '"></p>';
+            blog += '<p class = "thumbnail"> <img src = "' + data.blog[i].image + '" alt="' + data.blog[i].exercise + '" width="50" height="60"></p>';
             blog += '<h3>' + data.blog[i].exercise +'</h3>';
             blog += '<h4 class="exercise">'+ data.blog[i].description + '</h4>';
-            blog += '<p><meter min="0" max="5" value"' + data.blog[i].rating + '">' + data.blog[i].rating + 'out of 5</meter> <a href="/rate">Rate It</a></p>';
+            blog += '<p><meter min="0" max="5" value"' + data.blog[i].rating + '">'  + data.blog[i].rating + 'out of 5</meter> <a href="/rate">Rate It</a></p>';
             blog += '<dl>';
                 blog += '<dt> Estimated Time</dt>';
                 blog += '<dd>' + data.blog[i].time + ' minutes</dd>';
 
                 blog += '<dt> Repetitions</dt>';
                 blog += '<dd>' + data.blog[i].repetitions + ' sets</dd>';
+                
+                blog += '<dt> Uploaded</dt>';
+                blog += '<dd>' + data.blog[i].upload + ', 2020</dd>';
             blog += '</dl>';
             blog+= '</article>';
         }
