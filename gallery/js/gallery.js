@@ -41,3 +41,10 @@ if (next)
     console.log(next[1]);
     next[1].addEventListener("click", nextImage);
 }
+function previousImage(event){
+    index -= 1;
+    document.querySelector('img').alt = gallery.newCaption[index];
+    document.querySelector('img').src = gallery.newImage[index];
+    document.querySelector('h3').innerHTML = gallery.newCaption[index];
+    document.querySelectorAll('p')[1].innerHTML = gallery.newDescription[index];
+}
