@@ -28,3 +28,16 @@ xhr.onload = function(){
 
 xhr.open('GET', 'http://JJKneiss.github.io/exercises.JSON', true);
 xhr.send(null);
+
+const previous = document.querySelectorAll('button');
+if (previous)
+{
+    console.log(previous[0]);
+    previous[0].addEventListener("click", previousImage);
+}
+const next = document.querySelectorAll('button');
+if (next)
+{
+    console.log(next[1]);
+    next[1].addEventListener("click", nextImage);
+}
