@@ -1,5 +1,7 @@
 document.querySelector('h2').innerHTML = "Mental Health Exercises";
+
 var index = 1;
+
 var gallery = {
     imageIndex: [],
     newImage: [],
