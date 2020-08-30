@@ -34,3 +34,15 @@ function previousRecipe(event){
     index -= 1;
     getRecipes(index);
 }
+const next = document.querySelectorAll('button');
+if (next)
+{
+    console.log(next[1]);
+    next[1].addEventListener("click", nextRecipe);
+}
+function nextRecipe(event){
+    event.preventDefault();
+    if (!(index < 2)) return
+    index += 1;
+    getRecipes(index);
+}
