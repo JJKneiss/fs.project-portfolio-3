@@ -21,3 +21,16 @@ async function getRecipes(index){
     dd[0].innerHTML  = data.servings;
     dd[1].innerHTML = data.readyInMinutes;
 }
+
+const previous = document.querySelectorAll('button');
+if (previous)
+{
+    console.log(previous[0]);
+    previous[0].addEventListener("click", previousRecipe);
+}
+function previousRecipe(event){
+    event.preventDefault();
+    if (!(index > 0)) return
+    index -= 1;
+    getRecipes(index);
+}
