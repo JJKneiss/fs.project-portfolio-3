@@ -5,9 +5,19 @@ var index = 1;
 const apiKey = "572f9b42c48b46fdb51c720d96b43f5b";
 var recipeIds = ["716427", "716429", "716430"];
 const startURL = "https://api.spoonacular.com/recipes/";
-
+const previous = document.querySelectorAll('button');
+if (previous)
+{
+    console.log(previous[0]);
+    previous[0].addEventListener("click", previousRecipe);
+}
+const next = document.querySelectorAll('button');
+if (next)
+{
+    console.log(next[1]);
+    next[1].addEventListener("click", nextRecipe);
+}
 getRecipes(index);
-
 async function getRecipes(index){
     const endURL = recipeIds[index] + "/information?apiKey=" + apiKey;
     var url = startURL + endURL;
@@ -22,23 +32,11 @@ async function getRecipes(index){
     dd[1].innerHTML = data.readyInMinutes;
 }
 
-const previous = document.querySelectorAll('button');
-if (previous)
-{
-    console.log(previous[0]);
-    previous[0].addEventListener("click", previousRecipe);
-}
 function previousRecipe(event){
     event.preventDefault();
     if (!(index > 0)) return
     index -= 1;
     getRecipes(index);
-}
-const next = document.querySelectorAll('button');
-if (next)
-{
-    console.log(next[1]);
-    next[1].addEventListener("click", nextRecipe);
 }
 function nextRecipe(event){
     event.preventDefault();
