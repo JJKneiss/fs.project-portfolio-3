@@ -50,3 +50,41 @@ if (inputAll[0]){
         checkFilled();
     });   
 }
+if (inputAll[1]){
+    inputAll[1].addEventListener("input", function(){
+        event.preventDefault();
+        if (input1Changed == false){
+            labels[1].removeAttribute("class");
+            input1Changed = true;
+            numFilled += 1;
+        }  
+        if (inputAll[1].value != ""){
+        }
+        else
+        {
+            input1Changed = false;
+            labels[1].className = "error";
+            numFilled -= 1;
+        } 
+        checkFilled();   
+    });
+}
+if (inputAll[2]){
+    inputAll[2].addEventListener("input", function(){
+        event.preventDefault();
+        if (input2Changed == false){
+            labels[2].removeAttribute("class");
+            input2Changed = true;
+            numFilled += 1;
+        }
+        if (inputAll[2].value != ""){
+        }
+        else
+        {
+            input2Changed = false;
+            labels[2].className = "error";
+            numFilled -= 1;
+        }
+        checkFilled();
+    });
+}
