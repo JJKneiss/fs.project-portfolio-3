@@ -1,7 +1,3 @@
-
-// Disable Button, Set Error
-checkFilled();
-
 // Change Paragraph Text
 document.querySelector('p').innerHTML = 
 "Harbor Health prides itself on tending to " +
@@ -11,9 +7,15 @@ document.querySelector('p').innerHTML =
 "Have a great day!";
 
 // Inputs
-var labels = document.querySelectorAll('label');
+
 var inputAll = document.querySelectorAll('input');
 var textarea = document.querySelector('textarea');
+var labels = document.querySelectorAll('label');
+labels[0].className = "error";
+labels[1].className = "error";
+labels[2].className = "error";
+labels[3].className = "error";;
+checkFilled();
 // Set Theme
 document.querySelector('h2').innerHTML = 
 "<strong>Get</strong> In Touch";
@@ -30,6 +32,9 @@ var input0Changed = false;
 var input1Changed = false;
 var input2Changed = false;
 var textChanged = false;
+
+// Disable Button, Set Error
+
 
 if (inputAll[0]){
     inputAll[0].addEventListener("input", function(){
@@ -116,6 +121,7 @@ function checkFilled(){
     else {
         document.querySelector('button').disabled = true;
         document.querySelector('button').className = "disabled";
+
     }
 }
 
