@@ -88,3 +88,22 @@ if (inputAll[2]){
         checkFilled();
     });
 }
+if (textarea){
+    textarea.addEventListener("input", function(){
+        event.preventDefault();
+        if (textChanged == false){
+            labels[3].removeAttribute("class");
+            textChanged = true;
+            numFilled += 1;
+        } 
+        if (textarea.value != ""){
+        }
+        else
+        {
+            textChanged = false;
+            labels[3].className = "error";
+            numFilled -= 1;
+        } 
+        checkFilled();      
+    });
+}
