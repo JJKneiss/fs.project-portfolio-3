@@ -118,3 +118,12 @@ function checkFilled(){
         document.querySelector('button').className = "disabled";
     }
 }
+
+var submit = document.querySelector('button');
+if(submit){
+    submit.addEventListener("click", function(){
+        event.preventDefault();
+        document.body.innerHTML = "";
+        document.body.innerHTML = '<form><h2><strong>Thank</strong> You</h2><p>Your Support is Appreciated!</p></form>';
+    });
+}
