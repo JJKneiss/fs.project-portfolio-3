@@ -107,3 +107,14 @@ if (textarea){
         checkFilled();      
     });
 }
+
+function checkFilled(){
+    if(numFilled == 4){
+        document.querySelector('button').disabled = false;
+        document.querySelector('button').removeAttribute("class");
+    }
+    else {
+        document.querySelector('button').disabled = true;
+        document.querySelector('button').className = "disabled";
+    }
+}
